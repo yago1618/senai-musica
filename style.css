@@ -1,0 +1,73 @@
+:root {
+    --cinzaClaro: rgb(168, 168, 168);
+    --cinzaEscuro: rgb(80, 80, 80);
+    --cinzaMaisEscuro: rgb(59, 59, 59);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1 {
+    color: white;
+}
+
+#titulo {
+    font-size: 320%;
+    text-align: center;
+}
+
+p {
+    color: white;
+}
+
+header {
+    height: 10vh;
+    width: 100vw;
+    background-color: var(--cinzaMaisEscuro);
+    align-content: center;
+}
+
+main {
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+}
+
+footer {
+    height: 10vh;
+    width: 100vw;
+    background-color: var(--cinzaMaisEscuro);
+}
+
+#esquerda {
+    width: 20vw;
+    text-align: center;
+    padding-top: 20px;
+    background-color: var(--cinzaEscuro);
+}
+
+#meio {
+    height: 80vh;
+    width: 60vw;
+    background-color: gray;
+    justify-items: center;
+}
+
+#direita {
+    text-align: center;
+    width: 20vw;
+    padding-top: 20px;
+    background-color: var(--cinzaEscuro);
+}
+
+#musicas {
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 80vh;
+    width: 59vw;
+    background-color: var(--cinzaClaro);
+}
