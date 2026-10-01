@@ -1,4 +1,3 @@
-// crud.js
 import { database } from "./firebaseConfig.js";
 import {
   ref,
@@ -10,29 +9,29 @@ import {
   remove
 } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
 
-const pessoasRef = ref(database, "pessoas");
+const musicasRef = ref(database, "musicas");
 
 // Salvar – grava e espera a conclusão
-export async function salvar(nome, idade) {
-  const novoItemRef = await push(pessoasRef);
-  await set(novoItemRef, { nome, idade });
+export async function salvar(nome, audio) {
+  const novoItemRef = await push(musicasRef);
+  await set(novoItemRef, { nome, audio });
 }
 
 // Buscar todos – espera o snapshot e retorna os dados
 export async function buscarTodos() {
-  const snapshot = await get(pessoasRef);
+  const snapshot = await get(musicasRef);
   return snapshot.exists() ? snapshot.val() : {};
 }
 
 // Editar – atualiza campos e espera a conclusão
-export async function editar(id, nome, idade) {
-  const itemRef = child(pessoasRef, id);
-  await update(itemRef, { nome, idade });
+export async function editar(id, nome, audio) {
+  const itemRef = child(musicasRef, id);
+  await update(itemRef, { nome, audio });
 }
 
 // Deletar – remove o nó e espera a conclusão
 export async function deletar(id) {
-  const itemRef = child(pessoasRef, id);
+  const itemRef = child(musicasRef, id);
   await remove(itemRef);
 }
 

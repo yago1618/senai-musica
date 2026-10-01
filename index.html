@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <script src="main.js"></script>
+    <script type="module" src="main.js"></script>
     
     <header>
         <h1 id="titulo">Spotify 2</h1>
@@ -15,8 +15,10 @@
 
     <main>
         <div id="esquerda"><h1>Adicionar Música</h1>
-            <form action="">
-
+            <form>
+                <input type="text" id="nome" placeholder="Nome...">
+                <input type="text" id="musica" placeholder="Link da música...">
+                <button type="submit" id="btn-adicionar">Adicionar</button>
             </form>
         </div>
 
