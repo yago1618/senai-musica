@@ -1,73 +1,77 @@
 :root {
-    --cinzaClaro: rgb(168, 168, 168);
-    --cinzaEscuro: rgb(80, 80, 80);
-    --cinzaMaisEscuro: rgb(59, 59, 59);
+      --cinzaClaro: rgb(168, 168, 168);
+      --cinzaEscuro: rgb(80, 80, 80);
+      --cinzaMaisEscuro: rgb(59, 59, 59);
 }
-
+  
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Courier New', Courier, monospace;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Courier New', Courier, monospace;
 }
-
+  
 h1 {
-    color: white;
+      color: white;
 }
-
+  
 #titulo {
-    font-size: 320%;
-    text-align: center;
+      font-size: 320%;
+      text-align: center;
 }
-
+  
 p {
-    color: white;
+      color: white;
 }
-
+  
 header {
-    height: 10vh;
-    width: 100vw;
-    background-color: var(--cinzaMaisEscuro);
-    align-content: center;
+      height: 10vh;
+      width: 100vw;
+      background-color: var(--cinzaMaisEscuro);
+      align-content: center;
 }
-
+  
 main {
-    height: 80vh;
-    width: 100vw;
-    display: flex;
+      height: 80vh;
+      width: 100vw;
+      display: flex;
 }
-
+  
 footer {
-    height: 10vh;
-    width: 100vw;
-    background-color: var(--cinzaMaisEscuro);
+      height: 10vh;
+      width: 100vw;
+      background-color: var(--cinzaMaisEscuro);
 }
-
+  
 #esquerda {
-    width: 20vw;
-    text-align: center;
-    padding-top: 20px;
-    background-color: var(--cinzaEscuro);
+      width: 20vw;
+      text-align: center;
+      padding-top: 20px;
+      background-color: var(--cinzaEscuro);
 }
-
+  
 #meio {
-    height: 80vh;
-    width: 60vw;
-    background-color: gray;
-    justify-items: center;
+      height: 80vh;
+      width: 60vw;
+      background-color: gray;
+      justify-items: center;
 }
-
+  
 #direita {
-    text-align: center;
-    width: 20vw;
-    padding-top: 20px;
-    background-color: var(--cinzaEscuro);
+      text-align: center;
+      width: 20vw;
+      padding-top: 20px;
+      background-color: var(--cinzaEscuro);
+}
+  
+#musicas {
+      padding-left: 20px;
+      padding-right: 20px;
+      height: 77vh;
+      width: 59vw;
+      background-color: var(--cinzaClaro);
 }
 
-#musicas {
-    padding-left: 20px;
-    padding-right: 20px;
-    height: 80vh;
-    width: 59vw;
-    background-color: var(--cinzaClaro);
+#busca {
+      max-height: 3vh;
 }

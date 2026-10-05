@@ -4,35 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Spotify</title>
 </head>
 <body>
-    <script type="module" src="main.js"></script>
+
+<script type="module" src="main.js"></script>
     
-    <header>
-        <h1 id="titulo">Spotify 2</h1>
-    </header>
+<header>
+      <h1 id="titulo">Spotify 2</h1>
+</header>
 
-    <main>
-        <div id="esquerda"><h1>Adicionar Música</h1>
+<main>
+      <div id="esquerda"><h1>Adicionar Música</h1>
             <form>
-                <input type="text" id="nome" placeholder="Nome...">
-                <input type="text" id="musica" placeholder="Link da música...">
-                <button type="submit" id="btn-adicionar">Adicionar</button>
+                  <input type="text" id="nome" placeholder="Nome...">
+                  <input type="text" id="musica" placeholder="Link da música...">
+                  <button type="submit" id="btn-adicionar">Adicionar</button>
             </form>
-        </div>
+      </div>
 
-        <div id="meio">
+      <div id="meio">
+            <div id=""><input type="text" name="busca" id="busca"></div>
             <ul id="musicas"></ul>
-        </div>
+      </div>
 
-        <div id="direita"><h1>Playlist</h1>
+      <div id="direita"><h1>Playlist</h1>
             <ul id="playlist"></ul>
-        </div>
-    </main>
+      </div>
+</main>
 
-    <footer>
-        <div class="audioPlayer"></div>
-    </footer>
+<footer>
+      <audio id="audio" src=""></audio>
+
+      <button id="play">Play</button>
+      <button id="pause">Pause</button>
+
+      <input id="volume" type="range" min="0" max="1" step="0.01" value="1">
+
+      <script>
+      const audio = document.getElementById("audio");
+      const play = document.getElementById("play");
+      const pause = document.getElementById("pause");
+      const volume = document.getElementById("volume");
+
+      play.addEventListener("click", () => audio.play());
+      pause.addEventListener("click", () => audio.pause());
+
+      volume.addEventListener("input", () => {
+            audio.volume = volume.value;
+      });
+      </script>
+</footer>
+
 </body>
 </html>

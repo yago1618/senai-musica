@@ -7,10 +7,10 @@ const btnAdicionar = document.getElementById("btn-adicionar");
 const nomeInput = document.getElementById("nome");
 const audioInput = document.getElementById("audio");
 // const lista = document.getElementById("lista");
-// const buscaInput = document.getElementById("busca");
+const buscaInput = document.getElementById("busca");
 // const imagemInput = document.getElementById("imagem");
 
-// let idEditando = null;
+let idEditando = null;
 
 // Cadastrar ou atualizar
 btnAdicionar.addEventListener("click", async (event) => {
@@ -18,22 +18,21 @@ btnAdicionar.addEventListener("click", async (event) => {
   const nome = nomeInput.value.trim();
   const audio = audioInput.value.trim();
 
-  if (!nome && !audio) {
+  if (!nome || !audio) {
     alert("Preencha os campos");
     return;
   }
 
   try {
     if (idEditando) {
-      await editar(idEditando, nome, mensagem, imagem);
+      await editar(idEditando, nome, audio);
       idEditando = null;
     } else {
-      await salvar(nome, mensagem, imagem);
+      await salvar(nome, audio);
     }
 
     nomeInput.value = "";
-    mensagemInput.value = "";
-    imagemInput.value = "";
+    audioInput.value = "";
     await atualizarLista(buscaInput.value.toLowerCase());
   } catch (err) {
     console.error("Erro ao salvar/atualizar:", err);
@@ -41,7 +40,6 @@ btnAdicionar.addEventListener("click", async (event) => {
   }
 });
 
-// Filtrar enquanto digita
 buscaInput.addEventListener("input", () =>
   atualizarLista(buscaInput.value.toLowerCase())
 );
@@ -54,13 +52,14 @@ function renderItem(id, p, filtro) {
     li.innerHTML = `
       <span><strong>${p.nome}</strong></span>
       <div>
+        <button class="btn-editar">Excluir</button>
         <button class="btn-excluir">Excluir</button>
       </div>
     `;
 
   // excluir
   li.querySelector(".btn-excluir").addEventListener("click", async () => {
-    if (confirm("Excluir essa mensagem?")) {
+    if (confirm("Excluir essa música?")) {
       try {
         await deletar(id);
         await atualizarLista(filtro);
@@ -70,15 +69,14 @@ function renderItem(id, p, filtro) {
       }
     }
   });
-
-  lista.appendChild(li);
+  musicas.appendChild(li);
 }
 
 // Função para listar dados no DOM, com filtro simples
 async function atualizarLista(filtro = "") {
   try {
     const dados = await buscarTodos();
-    lista.innerHTML = "";
+    musicas.innerHTML = "";
 
     // Itera sobre os dados e aplica o filtro no nome
     for (let id in dados) {
@@ -94,6 +92,18 @@ async function atualizarLista(filtro = "") {
     alert("Não foi possível carregar a lista.");
   }
 }
+
+const audio = document.getElementById("audio");
+const play = document.getElementById("play");
+const pause = document.getElementById("pause");
+const volume = document.getElementById("volume");
+
+play.addEventListener("click", () => audio.play());
+pause.addEventListener("click", () => audio.pause());
+
+volume.addEventListener("input", () => {
+      audio.volume = volume.value;
+});
 
 // Carregar lista ao abrir a página
 window.addEventListener("load", () => atualizarLista());
