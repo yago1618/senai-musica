@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Spotify</title>
+    <title>Spotify 2</title>
 </head>
 <body>
 
-<script type="module" src="main.js"></script>
-    
 <header>
       <h1 id="titulo">Spotify 2</h1>
 </header>
@@ -18,7 +16,7 @@
       <div id="esquerda"><h1>Adicionar Música</h1>
             <form>
                   <input type="text" id="nome" placeholder="Nome...">
-                  <input type="text" id="musica" placeholder="Link da música...">
+                  <input type="text" id="audio" placeholder="Link da música...">
                   <button type="submit" id="btn-adicionar">Adicionar</button>
             </form>
       </div>
@@ -34,27 +32,15 @@
 </main>
 
 <footer>
-      <audio id="audio" src=""></audio>
+      <audio id="audioPlayer" src=""></audio>
 
       <button id="play">Play</button>
       <button id="pause">Pause</button>
 
       <input id="volume" type="range" min="0" max="1" step="0.01" value="1">
-
-      <script>
-      const audio = document.getElementById("audio");
-      const play = document.getElementById("play");
-      const pause = document.getElementById("pause");
-      const volume = document.getElementById("volume");
-
-      play.addEventListener("click", () => audio.play());
-      pause.addEventListener("click", () => audio.pause());
-
-      volume.addEventListener("input", () => {
-            audio.volume = volume.value;
-      });
-      </script>
 </footer>
+
+<script type="module" src="main.js"></script>
 
 </body>
 </html>

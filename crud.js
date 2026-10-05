@@ -13,7 +13,7 @@ const musicasRef = ref(database, "musicas");
 
 // Salvar – grava e espera a conclusão
 export async function salvar(nome, audio) {
-  const novoItemRef = await push(musicasRef);
+  const novoItemRef = push(musicasRef);
   await set(novoItemRef, { nome, audio });
 }
 
