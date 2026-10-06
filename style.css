@@ -75,3 +75,12 @@ footer {
 #busca {
       max-height: 3vh;
 }
+
+#btn-adicionar {
+      height: 2.5vh;
+      width: 5vw;
+}
+
+.btn-tocar {
+      width: 20px;
+}

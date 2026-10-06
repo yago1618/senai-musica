@@ -1,7 +1,6 @@
 import { salvar, buscarTodos, editar, deletar } from "./crud.js";
 
 const musicas = document.getElementById("musicas");
-const playlist = document.getElementById("playlist");
 const btnAdicionar = document.getElementById("btn-adicionar");
 
 const nomeInput = document.getElementById("nome");
@@ -137,3 +136,9 @@ volume.addEventListener("input", () => {
 
 // Carregar lista ao abrir a página
 window.addEventListener("load", () => atualizarLista());
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/sw.js");
+  });
+}
